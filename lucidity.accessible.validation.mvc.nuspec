@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <title>Lucidity Accessible Validation MVC</title>
+    <id>lucidity.accessible.validation.mvc</id>
+    <version>1.0.0</version>
+    <authors>Paul T Davies</authors>
+    <owners>Paul T Davies</owners>
+    <iconUrl>http://www.luciditysoftware.co.uk/LucidityLogo32.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An accessible validation summary for ASP.NET MVC applications</description>
+    <copyright>Copyright 2015</copyright>
+    <dependencies>
+    </dependencies>
+  </metadata>
+</package>

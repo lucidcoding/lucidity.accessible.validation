@@ -1,0 +1,20 @@
+﻿.validation-summary-valid
+{
+	display: none;
+}
+
+.validation-summary-errors
+{
+	color: #ff0000;
+}
+
+.validation-summary-errors h2
+{
+    font-size: large;
+}
+
+.validation-summary-errors a
+{
+	color: inherit;
+    text-decoration: underline;
+}

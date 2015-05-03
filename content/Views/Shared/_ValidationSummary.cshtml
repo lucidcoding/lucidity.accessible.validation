@@ -1,0 +1,27 @@
+@model ModelStateDictionary
+@{
+    var errors = Model.SelectMany(keyValuePair => keyValuePair.Value.Errors);
+    var modelErrors = errors as IList<ModelError> ?? errors.ToList();
+}
+<div id="error-container" class='@(Html.ViewData.ModelState.IsValid ? "validation-summary-valid" : "validation-summary-errors")' data-valmsg-summary="true" tabindex="-1" aria-labelledby="errors" aria-live="Off">
+    <div id="errorDiv" class="col-xs-12" aria-atomic="true">
+        <h2 id="errors" role="alert">There were some problems with the information you entered, please correct and resubmit.</h2>
+        <ul id="error-list" role="list">
+            @foreach (var key in Model.Keys)
+            {
+                if (Model[key].Errors.Any())
+                {
+                    foreach (var modelError in Model[key].Errors)
+                    {
+                        <li role="listitem">
+                            <a href="#@key.Replace("[", "_").Replace("]", "_").Replace(".", "_")" class="validation-error-link"
+                               data-element-id="@key.Replace("[", "_").Replace("]", "_").Replace(".", "_")">
+                                @modelError.ErrorMessage
+                            </a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+</div>
